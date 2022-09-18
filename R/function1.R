@@ -1,24 +1,17 @@
-# this function will be exported
-isawesome <- function(name = "Someone", alternative = FALSE,
-                      return_message = TRUE) {
-  if (!alternative) {
-    if (return_message) {
-      paste(name, "is awesome!") %>%
-        message()
-    } else {
-      paste(name, "is awesome!")
-    }
-  } else {
-    if (return_message) {
-      paste(name, .random_compliment()) %>%
-        message()
-    } else {
-      paste(name, .random_compliment())
-    }
-  }
-}
-
-# this function is internal
-.random_compliment <- function() {
-  sample(c("is incredible!", "is amazing!", "rocks!"), 1)
+#' Personal greeting
+#'
+#' @description Greet a person and appropriately capitalize their name.
+#'
+#' @param name Your name (character string; e.g. "john doe").
+#'
+#' @return A character string, capitalized to title case.
+#' @export
+#'
+#' @examples
+#' hello("james bond")
+#'
+#'
+hello <- function(name = "your name") {
+  name <- stringr::str_to_title(name)
+  print(paste("Hello,", name," you're a legend!"))
 }
