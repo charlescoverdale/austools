@@ -3,20 +3,24 @@
 ## Overview
 austools is a new package that provides an assortment of tools for analysing Australian economic data.
 
-## Installation
+The package is still very much in development, with updates to come periodically over the remainder of 2022.
+
+A vignette will also be available shortly.
+
+## Installation of development version
+
+The austools package needs to be downloaded and installed from Github. The easiest way to do this is with the devtools package. If you don't have the devtools package, install it:
 
 ``` r
-# The easiest way to get austools is through the devtools package
-
-devtools::install_github("charlescoverdale/austools")
-library(austools)
-
+install.packages("devtools")
 ```
 
-### Development version
+One devtools in installed, you cam download and install austools as follows:
 
-To get a bug fix or to use a feature from the development version, you
-can install the development version of dplyr from GitHub.
+``` r
+devtools::install_github("charlescoverdale/austools")
+library(austools)
+```
 
 ## Getting help
 
