@@ -1,2 +1,2 @@
-x <- sample(1000)
-usethis::use_data(x, mtcars)
+y <- sample(1000)
+usethis::use_data(y, mtcars)
