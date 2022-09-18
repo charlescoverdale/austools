@@ -26,4 +26,4 @@ reproducible example on
 
 
 ## Interested in making your own package?
-Check out [<a href=']this step by step guide] (https://kbroman.org/pkg_primer/pages/github.html)
+Check out [this step by step guide](https://kbroman.org/pkg_primer/pages/github.html)
