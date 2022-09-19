@@ -30,4 +30,4 @@ reproducible example on
 
 
 ## Interested in making your own package?
-Check out [this step by step guide](https://kbroman.org/pkg_primer/pages/github.html). If you're interested in adding a dataset to a package, [this answer](https://stackoverflow.com/questions/69698805/adding-dataset-in-r-package) on stack overflow is most helpful.
+Check out [this step by step guide](https://kbroman.org/pkg_primer/pages/github.html) on using github for R packages. The [2nd chapter](https://r-pkgs.org/whole-game.html) of the R Packages book is also quite a handy guide. If you're interested in adding a dataset to a package, [this answer](https://stackoverflow.com/questions/69698805/adding-dataset-in-r-package) on stack overflow is most helpful.
