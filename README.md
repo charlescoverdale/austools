@@ -1,11 +1,11 @@
 # austools
 
 ## Overview
-austools is a new package that provides an assortment of tools for analysing Australian economic data.
+austools is a new package that provides an assortment of tools for analysing Australian economic data. The package is still very much in development, with updates to come periodically over the remainder of 2022.
 
-The package is still very much in development, with updates to come periodically over the remainder of 2022.
+## Current data sets and functions:
 
-A vignette will also be available shortly.
+Discount factors: use `disc_fctr_2pc` to load a two column dataframe containing the time period and the discount factor at a 2 per cent discount rate (e.g. the discount factor at year 2 at 2% is 0.9804)
 
 ## Installation of development version
 
