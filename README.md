@@ -6,7 +6,7 @@ austools is a new package that provides an assortment of tools for analysing Aus
 
 ## Current data sets and functions
 
-Discount factors: use `disc_fctr_2pc` to load a two column dataframe containing the time period and the discount factor at a 2 per cent discount rate (e.g. the discount factor at year 2 at 2% is 0.9804)
+Discount factors: use `disc_fctr_7pc` to load a two column dataframe containing the time period and the discount factor at a 7 per cent discount rate (e.g. the discount factor at year 2 at 7% is 0.9346). There are also datasets for `disc_fctr_2pc`,`disc_fctr_4pc` and `disc_fctr_10pc`.
 
 ## Installation of development version
 
