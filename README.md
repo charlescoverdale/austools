@@ -1,42 +1,47 @@
 # austools
 
-## Overview
+An assortment of tools for analysing Australian economic data.
 
-austools is a new package that provides an assortment of tools for analysing Australian economic data. The package is still very much in development, with updates to come periodically over the remainder of 2022.
+## Installation
 
-## Current data sets and functions
-
-Discount factors: use `disc_fctr_7pc` to load a two column dataframe containing the time period and the discount factor at a 7 per cent discount rate (e.g. the discount factor at year 2 at 7% is 0.9346). There are also datasets for `disc_fctr_2pc`,`disc_fctr_4pc` and `disc_fctr_10pc`.
-
-## Installation of development version
-
-The austools package needs to be downloaded and installed from Github. The easiest way to do this is with the devtools package. If you don't have the devtools package, install it:
-
-``` r
-install.packages("devtools")
-```
-
-One devtools in installed, you cam download and install austools as follows:
-
-``` r
+```r
 devtools::install_github("charlescoverdale/austools")
 library(austools)
 ```
 
+## Functions
+
+### `discount_table(base_year, rate, years = 30)`
+
+Generates a discount rate schedule as a tidy tibble. The index is 1.00 in the base year and declines each year based on the discount rate.
+
+```r
+discount_table(2025, 0.07)
+#> # A tibble: 30 × 2
+#>     year index
+#>    <int> <dbl>
+#>  1  2025 1
+#>  2  2026 0.935
+#>  3  2027 0.873
+#>  4  2028 0.816
+#>  ...
+
+# Custom number of years
+discount_table(2025, 0.04, years = 20)
+```
+
+**Arguments:**
+- `base_year` — the starting year (index = 1.00)
+- `rate` — annual discount rate as a decimal (e.g. `0.07` for 7%)
+- `years` — number of years to generate, including the base year (default: 30)
+
 ## Getting help
 
-If you encounter a clear bug, please file an issue with a minimal
-reproducible example on
-[GitHub](https://github.com/charlescoverdale/austools/issues).
+Please file bugs or feature requests on [GitHub](https://github.com/charlescoverdale/austools/issues).
 
-## Other useful economic packages
-* The [foreign](https://cran.r-project.org/web/packages/foreign/index.html) and [haven](https://cran.r-project.org/web/packages/haven/index.html) packages can help you get datasets of many, many formats into R.
-* The [pdfetch](https://cran.r-project.org/web/packages/pdfetch/index.html) package contains economic and financial time series from public sources (e.g. US FRED, World Bank, and the UK's ONS).
-* The [Quandl](https://data.nasdaq.com/tools/r) package is built by NASDAQ and allows a data link straight into their platform for stock market data.
-* The [zoo](https://cran.r-project.org/web/packages/zoo/index.html) and [xts](https://cran.r-project.org/web/packages/xts/index.html#:~:text=xts%3A%20eXtensible%20Time%20Series,while%20simplifying%20cross%2Dclass%20interoperability.) packages are excellent for manipulating time series.
-* The [readrba](https://github.com/MattCowgill/readrba) package pulls clean data sets from the RBA's database (e.g. case rate, unemployment, FX) while the [readabs](https://github.com/MattCowgill/readabs) package pulls data from the Australian Bureau of Statistics (e.g. wages, and payroll)
+## Related packages
 
-This [page](https://github.com/SNStatComp/awesome-official-statistics-software) also contains a huge list of packages for working with statistical data.
-
-## Interested in making your own package?
-Check out [this step by step guide](https://kbroman.org/pkg_primer/pages/github.html) on using github for R packages. The [2nd chapter](https://r-pkgs.org/whole-game.html) of the R Packages book is also quite a handy guide. If you're interested in adding a dataset to a package, [this answer](https://stackoverflow.com/questions/69698805/adding-dataset-in-r-package) on stack overflow is most helpful.
+- [readrba](https://github.com/MattCowgill/readrba) — RBA data (cash rate, unemployment, FX)
+- [readabs](https://github.com/MattCowgill/readabs) — ABS data (wages, payroll)
+- [readaec](https://github.com/charlescoverdale/readaec) — Australian Electoral Commission data
+- [inflateR](https://github.com/charlescoverdale/inflateR) — inflation adjustment using CPI data
